@@ -28,6 +28,7 @@ Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/
 Provides: cheliso-cxgb4 = %{version}-%{release}
 Obsoletes: cheliso-cxgb4 < 1.0.1-2
 
+BuildRequires: gcc
 BuildRequires: kernel-devel
 Provides: vendor-driver
 Requires: kernel-uname-r = %{kernel_version}
