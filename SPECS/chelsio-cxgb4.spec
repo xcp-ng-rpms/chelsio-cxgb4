@@ -21,7 +21,7 @@
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{vendor_label}-%{driver_name}
 Version: 1.0.1
-Release: %{?xsrel}%{?dist}
+Release: %{?xsrel}.0.kernelpreview.1%{?dist}
 License: GPL
 Source0: chelsio-cxgb4-1.0.1.tar.gz
 
@@ -29,7 +29,7 @@ Provides: cheliso-cxgb4 = %{version}-%{release}
 Obsoletes: cheliso-cxgb4 < 1.0.1-2
 
 BuildRequires: gcc
-BuildRequires: kernel-devel
+BuildRequires: kernel-devel >= 4.19.325-cip137.8.0.46.16
 %{?_cov_buildrequires}
 Provides: vendor-driver
 Requires: kernel-uname-r = %{kernel_version}
@@ -72,6 +72,9 @@ find %{buildroot}/lib/modules/%{kernel_version} -name "*.ko" -type f | xargs chm
 %{?_cov_results_package}
 
 %changelog
+* Mon Nov 16 2026 Quentin Casasnovas <quentin.casasnovas@vates.tech> - 1.0.1-4.0.kernelpreview.1
+- Rebuild for kernel v4.19.325-cip137
+
 * Mon Feb 14 2022 Ross Lagerwall <ross.lagerwall@citrix.com> - 1.0.1-4
 - CP-38416: Enable static analysis
 
